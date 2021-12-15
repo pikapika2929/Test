@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 titleText.setText(mCalendarAdapter.getTitle());
             }
         });
+        nextButton = findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCalendarAdapter.nextMonth();
+                titleText.setText(mCalendarAdapter.getTitle());
+            }
+        });
         calendarGridView = findViewById(R.id.calendarGridView);
         mCalendarAdapter = new CalendarAdapter(this);
         calendarGridView.setAdapter(mCalendarAdapter);
